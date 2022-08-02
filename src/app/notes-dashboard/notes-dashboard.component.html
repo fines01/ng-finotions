@@ -4,6 +4,8 @@
 <div class="notes-container">
     <!-- single note components (examples, TEST) -->
     <span *ngFor="let note of notes">
-        <app-note></app-note>
+        <app-note
+        [title]="note.title"
+        [body]="note.body"></app-note>
     </span>
 </div>
