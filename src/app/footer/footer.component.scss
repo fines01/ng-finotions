@@ -12,6 +12,7 @@ footer {
     align-items: center;
     padding: 0 var(--space-x);
     box-sizing: border-box;
+    box-shadow: 0px 0px 3px 0px orange;
 
     a:not(.goto-top) {
         color: white;

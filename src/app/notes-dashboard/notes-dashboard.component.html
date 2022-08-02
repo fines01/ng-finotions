@@ -1,1 +1,9 @@
-<p>notes-dashboard works!</p>
+<!-- FORM: create new note -->
+<div class="form-container"></div>
+<!-- container to display notes -->
+<div class="notes-container">
+    <!-- single note components (examples, TEST) -->
+    <span *ngFor="let note of notes">
+        <app-note></app-note>
+    </span>
+</div>
