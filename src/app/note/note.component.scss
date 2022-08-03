@@ -22,23 +22,13 @@
         border-radius: 4px;
 	}
 
-	&:hover {
+	&:not(button):hover {
 		transform: scale(1.025);
 
-        .tooltip-text {
-            visibility: visible;
-        }
+			.tooltip-text {
+				display: block;
+			}
     }
-
-	// img {
-	// border-radius: 4px;
-	// cursor: pointer;
-	// transition: all 235ms;
-
-	//&:hover {
-	// transform: scale(1.1); // would be nice to add a zoom-in effect without becoming bigger than box
-	//}
-	// }
 
 	.note-card-body {
 		padding: 1rem;
@@ -51,7 +41,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-
+		
+		&:hover {
+			.tooltip-text {
+				display: none !important; // GN !!!
+				border: 2px solid green;
+			}
+		}
+		
 		button {
 			font-family: inherit;
 			border: none;
@@ -63,12 +60,12 @@
 			transition: all 235ms;
             
 			&:hover {
-                background-color: rgba(240, 240, 240, 0.8);
+                // background-color: rgba(240, 240, 240, 0.8);
+				background-color: rgb(61, 61, 92, 0.8);
 				transform: scale(1.05);
 
                 .tooltip-text {
-                    visibility: hidden !important; // GN !!!
-                    border-color: green;
+                    display: none; // GN !!!
                 }
 			}
 
@@ -77,7 +74,7 @@
 }
 
 .tooltip-text {
-	visibility: hidden;
+	display: none;
 	font-size: 0.9rem;
 	width: 8rem;
 	background-color: rgb(0, 0, 26, 0.4);
@@ -96,10 +93,12 @@
 
 button:nth-child(1):hover {
     outline: 1px solid orange;
+	color: orange !important;
 }
 
 button:nth-child(2):hover {
 	outline: 1px solid red;
+	color: red !important;
 }
 
 // GN

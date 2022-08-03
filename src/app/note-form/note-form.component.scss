@@ -1,0 +1,126 @@
+.note-form {
+	width: 200px;
+	border-radius: 4px;
+	border: 0.5px solid orange;
+	box-shadow: 1px 1px 5px rgb(0, 0, 0);
+	cursor: pointer;
+	transition: all 235ms;
+	position: relative;
+	background-color: rgba(250, 250, 250, 0.5);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		// background-color: rgb(128, 128, 128, 0.5);
+		background-image: url('https://picsum.photos/200?grayscale');
+		background-size: cover;
+		opacity: 0.5;
+		border-radius: 4px;
+	}
+
+	&:hover {
+		transform: scale(1.025);
+	}
+
+    h4 {
+        text-align: center;
+        margin: 0;
+        color: rgb(27, 55, 84);
+        position: relative;
+        cursor: pointer;
+
+        &:hover{
+            color: rgb(40, 79, 121);
+        }
+    }
+
+    .note-card-top {
+        padding: 0rem 1rem 0rem 1rem;
+    }
+
+	.note-card-body {
+        margin-top: -0.5rem;
+		padding: 0 1rem 1rem 1rem;
+		position: relative; //keeps el on top of pseudo-elements and bg image.
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+        justify-content: center;
+	}
+
+	.card-btns {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		button {
+			font-family: inherit;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			color: rgb(27, 55, 84);
+			font-weight: bold;
+			padding: 0.5rem 1rem;
+			transition: all 235ms;
+            margin-top: 0.5rem;
+
+			&:hover {
+                background-color: rgb(61, 61, 92, 0.8);
+				transform: scale(1.05);
+			}
+
+		}
+	}
+}
+
+button:nth-child(1):hover {
+	outline: 1px solid rgb(0, 255, 213);
+    color: rgb(0, 255, 213) !important;
+}
+
+button:nth-child(2):hover {
+	outline: 1px solid red;
+    color: red !important;
+}
+
+// GN
+.note-card:nth-child(2n) {
+	&:hover {
+		border: 1px solid red;
+	}
+}
+
+.note-card:nth-child(2n+1) {
+	&:hover {
+		border: 1px solid yellow;
+	}
+}
+
+input,
+textarea {
+	outline: none;
+	border-radius: 4px;
+	border: 1px solid transparent;
+    color: rgb(27, 55, 84);
+    padding: 0.25rem;
+    // margin: 0.25rem 0;
+    background-color: rgb(240,240,240);
+    transition: all 535ms;
+
+    &:hover {
+        background-color: white;
+    }
+}
+
+input {
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 0.25rem;
+}
+
+textarea {
+    border-radius: 0 0 4px 4px;
+}

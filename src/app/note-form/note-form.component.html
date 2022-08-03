@@ -1,0 +1,14 @@
+<div class="note-form">
+    <span class="note-card-top">
+        <!-- <span class="tooltip-text">click to toggle form</span> -->
+        <h4 (click)="toggleForm()">Add a new note</h4>
+    </span>
+    <div *ngIf="showForm" class="note-card-body">
+        <input type="text" name="title" placeholder="Title" [(ngModel)]="title" />
+        <textarea name="body" placeholder="Content..." rows="4" [(ngModel)]="body"></textarea>
+        <div class="card-btns">
+            <button (click)="onSaveNote()">Save</button>
+            <button (click)="clearInputs()">Cancel</button>
+        </div>
+    </div>
+</div>

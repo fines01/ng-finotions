@@ -2,10 +2,10 @@ nav {
 	background-color: rgb(27, 55, 84);
 	/* background-color: #8080ff; */
 	/* #e7fafe;  #140330*/
-	outline: 0.05px solid yellow;
+	outline: 0.5px solid yellow;
 
 	color: rgb(255, 255, 255); //? check
-	padding: 1.5rem var(--space-x);
+	padding: 1rem var(--space-x); // nicht mehr als ca 60px, 3.75rem versuchen
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -14,7 +14,7 @@ nav {
 	a {
 		color: rgb(255, 255, 255);
 		text-decoration: none;
-		font-weight: bold;
+		//font-weight: bold;
 
         &:hover {
             color: rgba(255,255,255,0.8);
@@ -31,7 +31,7 @@ nav {
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         margin-left: 0rem !important;
     }
 
@@ -45,7 +45,7 @@ nav {
         //border-radius: 4px;
         padding: 0.5rem;
         outline: none;
-        border: none;
+        border: 1px solid transparent;
         font-family: inherit;
     }
 
@@ -59,10 +59,18 @@ nav {
         color: rgb(27, 55, 84);
         font-weight: bold;
         border-left: 0.1px solid rgb(27, 55, 84, 0.5);
-        // background-color: check;
-
+        // btn-style: TESt like bs btn-outline-info ?
+        box-sizing: border-box;
+        
         &:hover {
-            background-color: rgb(240, 240, 240, 0.8);
+            background-color: rgba(193, 193, 193, 0.8);
+            color: rgb(0, 255, 213);
+            border: 1px solid rgb(0, 255, 213);
+            // GN 
+            input{
+                border: 1px solid rgb(0, 255, 213) !important;
+                border: 1px solid yellow;
+            }
         }
     }
 }

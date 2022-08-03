@@ -12,13 +12,20 @@ export class NotesDashboardComponent implements OnInit {
     {title: "Example note title", body: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.", id: 1},
     {title: "Delegation", body:"Q.: How many programmers does it take to change a light bulb? A.: Null – This is a hardware problem.", id:2},
     {title: "Fix Styling", body: "Improve and fix the styling (incl. note-cards container grid)", id:3},
-    {title: "Add notes", body:"Add notes and save in local storage. Edit and delete notes", id:4},
-
+    {title: "Add notes form", body:"Add notes and save in local storage. Edit and delete notes", id:4},
+    {title: "Edit notes", body:"Edit and delete (move to trash folder, delete permanently from trash folder)", id:4},
   ];
+
+  saveNote(note: string[]) {
+    console.log(note);
+    let newNote = {title: note[0], body: note[1], id: Date.now() }; // for now just timestamp as id
+    this.notes.unshift(newNote);
+  }
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
+
 
 }

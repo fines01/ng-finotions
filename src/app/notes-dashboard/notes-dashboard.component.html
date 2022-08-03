@@ -1,5 +1,7 @@
 <!-- FORM: create new note -->
-<div class="form-container"></div>
+<div class="form-container">
+    <app-note-form (submitNote)="saveNote($event)"></app-note-form>
+</div>
 <!-- container to display notes -->
 <div class="notes-container">
     <!-- single note components (examples, TEST) -->
