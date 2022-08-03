@@ -6,7 +6,10 @@
 	cursor: pointer;
 	transition: all 235ms;
 	position: relative;
-    background-color: rgba(250, 250, 250, 0.5);
+
+	// change depending on dark or light mode:
+    background-color: rgba(0,0,0, 0.5);
+	color: white;
 
 	&::before {
         content: "";
@@ -15,10 +18,12 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		// background-color: rgb(128, 128, 128, 0.5);
-		background-image: url('https://picsum.photos/200?grayscale');
 		background-size: cover;
-		opacity: 0.5;
+		// background-color: rgb(128, 128, 128, 0.5);
+		// change depending on dark or light mode:
+		background-image: url('/../assets/images/Roboxel-DarkAbstractBackgrounds/DarkAbstractBackgrounds_02.png');
+		background-image: url('https://picsum.photos/200?grayscale');
+		opacity: 0.6;
         border-radius: 4px;
 	}
 

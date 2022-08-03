@@ -9,8 +9,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class NoteFormComponent implements OnInit {
   
   showForm:boolean = false;
-  title!: string;
-  body!: string;
+  newTitle!: string;
+  newBody!: string;
 
   @Output() submitNote = new EventEmitter();
 
@@ -20,13 +20,15 @@ export class NoteFormComponent implements OnInit {
 
   onSaveNote() {
     // TODO validate inputs
-    this.submitNote.emit([this.title, this.body]);
+    this.submitNote.emit([this.newTitle, this.newBody]);
     this.clearInputs();
   }
 
+  // I could save new note in local storage here instead of emitting data into notes dashboard
+
   clearInputs() {
-    this.title = '';
-    this.body = '';
+    this.newTitle = '';
+    this.newBody = '';
   }
 
   constructor() { }

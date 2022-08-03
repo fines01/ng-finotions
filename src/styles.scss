@@ -9,14 +9,17 @@
     --space-x: 6rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #c6c7d2;
     font-family: 'Oxygen', sans-serif; /* TODO download fonts */
-    /* font-family: 'McLaren'; */
+    // font-family: 'McLaren';
     min-height: 100vh;
     position: relative;
     margin: 0;
-    scroll-behavior: smooth;
 }
 
 .d-none {
