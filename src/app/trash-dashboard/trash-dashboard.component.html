@@ -1,0 +1,12 @@
+<div class="notes-container">
+    <span *ngFor="let note of trashNotes">
+        <app-note
+            class="trash-note"
+            [title]="note.title"
+            [body]="note.body"
+            [id]="note.id">
+            (restoreNote)=""
+            (deleteNote)=""
+        </app-note>
+    </span>
+</div>

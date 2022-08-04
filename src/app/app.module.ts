@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NotesDashboardComponent } from './notes-dashboard/notes-dashboard.component';
 import { NoteComponent } from './note/note.component';
 import { NoteFormComponent } from './note-form/note-form.component';
+import { TrashDashboardComponent } from './trash-dashboard/trash-dashboard.component';
+import { NoteService } from './note.service';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,15 @@ import { NoteFormComponent } from './note-form/note-form.component';
     FooterComponent,
     NotesDashboardComponent,
     NoteComponent,
-    NoteFormComponent
+    NoteFormComponent,
+    TrashDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
