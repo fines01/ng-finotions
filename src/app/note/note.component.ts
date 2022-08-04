@@ -17,7 +17,6 @@ export class NoteComponent implements OnInit {
     this.trashNote.emit([this.title, this.id]);
     // 1.: delete from local storage OR:
     // 2.: send notes data to dashboard and delete/move from there (check, local storage etc is handled there)
-    console.log('delete note: ', this.title, ' id: ', this.id);
   }
 
   constructor() { }

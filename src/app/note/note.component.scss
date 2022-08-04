@@ -40,6 +40,10 @@
 		//color: white;
 		//font-weight: bold;
 		position: relative; //keeps el on top of pseudo-elements and bg image. This will make fonts etc. default to opacity 1 over transparent overlay
+
+		p {
+			white-space: pre-line;
+		}
 	}
 
 	.card-btns {
@@ -118,4 +122,3 @@ button:nth-child(2):hover {
 		border: 1px solid yellow;
 	}
 }
-
