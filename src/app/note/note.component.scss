@@ -21,7 +21,6 @@
 		left: 0;
 		right: 0;
 		background-size: cover;
-		// background-color: rgb(128, 128, 128, 0.5);
 		// change depending on dark or light mode:
 		background-image: url('/../assets/images/Roboxel-DarkAbstractBackgrounds/DarkAbstractBackgrounds_02.png');
 		background-image: url('https://picsum.photos/200?grayscale');
@@ -109,7 +108,6 @@
 			margin-top: 0.5rem;
             
 			&:hover {
-                // background-color: rgba(240, 240, 240, 0.8);
 				background-color: rgb(61, 61, 92, 0.8);
 				transform: scale(1.05);
 
@@ -178,15 +176,11 @@ textarea {
 }
 
 input {
-	border-radius: 4px 4px 0 0;
-	// n/d in note-form
-	//margin-bottom: 0.25rem;
 	font-weight: bold;
 	font-size: 0.9rem;
 }
 
 textarea {
-	border-radius: 0 0 4px 4px;
 	font-size: 0.9rem;
 
 	&::-webkit-scrollbar {

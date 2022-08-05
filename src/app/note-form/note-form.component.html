@@ -7,8 +7,8 @@
         </h4>
     </span>
     <div *ngIf="showForm" class="note-card-body">
-        <input type="text" name="title" placeholder="Title" [(ngModel)]="newTitle" />
-        <textarea name="body" placeholder="Content..." rows="4" [(ngModel)]="newBody"></textarea>
+        <input type="text" name="title" placeholder="Title" [class.outline-blink]="titleIsEmpty" [(ngModel)]="newTitle" />
+        <textarea name="body" placeholder="Content..." rows="4" [class.outline-blink]="bodyIsEmpty" [(ngModel)]="newBody"></textarea>
         <div class="card-btns">
             <button (click)="onSaveNote()">Save</button>
             <button (click)="clearInputs()">Clear</button>

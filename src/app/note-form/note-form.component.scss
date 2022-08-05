@@ -15,7 +15,6 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		// background-color: rgb(128, 128, 128, 0.5);
 		background-image: url('https://picsum.photos/200?grayscale');
 		background-size: cover;
 		opacity: 0.45;
@@ -48,7 +47,6 @@
 		position: relative; //keeps el on top of pseudo-elements and bg image.
         display: flex;
         flex-direction: column;
-        //align-items: center;
         justify-content: center;
 	}
 
@@ -110,6 +108,7 @@ textarea {
     // margin: 0.25rem 0;
     background-color: rgb(240,240,240);
     transition: all 535ms;
+	transition: blink 330ms ease-in-out;
 
     &:hover {
         background-color: white;
@@ -117,12 +116,12 @@ textarea {
 }
 
 input {
-    border-radius: 4px 4px 0 0;
+    //border-radius: 4px 4px 0 0;
     margin-bottom: 0.25rem;
 }
 
 textarea {
-    border-radius: 0 0 4px 4px;
+    //border-radius: 0 0 4px 4px;
 
 	&::-webkit-scrollbar {
 		width: 0.35rem;
@@ -136,5 +135,23 @@ textarea {
 	&::-webkit-scrollbar-thumb:hover {
 		background: rgb(36, 72, 111);
 	}
+}
+
+.outline-blink {
+	animation: outline-blink 255ms ease-in-out infinite;
+}
+
+@keyframes outline-blink {
+	0% {
+        outline: 9px solid transparent;
+    }
+
+    50% {
+        outline: 1px solid orangered;
+    }
+
+    100% {
+        outline: 1px solid transparent;
+    }
 }
 
