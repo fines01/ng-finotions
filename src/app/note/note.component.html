@@ -1,14 +1,30 @@
 <!-- single note component -->
-<div class="note-card">
+<div class="note-card" [class.edit-form-style]="editMode">
     <span class="note-card-top">
-        <span class="tooltip-text">Click to open</span>
+        <!-- <span *ngIf="!editMode" class="tooltip-text">Click title to open detail-view</span> -->
     </span>
-    <div class="note-card-body">
-        <h4>{{ title }}</h4>
-        <p>{{ body }}</p>
+    <div *ngIf="!editMode" class="note-card-body">
+        <h4>
+            {{ title }}
+        </h4>
+        <p>
+            {{ body }}
+        </p>
         <div class="card-btns">
-            <button>Edit</button>
+            <button (click)="openEdit()">Edit</button>
             <button (click)="onMoveToTrash()">Delete</button>
         </div>
     </div>
+
+    <!-- edit card - body: inputs (dry: similar to note-form component - (mb own component for form-body with inputs) ) -->
+    <div *ngIf="editMode" class="note-card-body">
+        <input type="text" name="title" placeholder="Title" [(ngModel)]=" title " />
+        <textarea name="body" placeholder="Content..." rows="4" [(ngModel)]=" body "></textarea>
+        <div class="card-btns">
+            <button (click)="onSaveEdit()">Save</button>
+            <button (click)="closeEdit()">Back</button>
+            <!-- <button (click)="resetInputs()">Reset</button> -->
+        </div>
+    </div>
+
 </div>

@@ -34,7 +34,17 @@ export class NotesDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  moveToTrash(note: [noteTitle: string, noteID: number]) { // title not actualy necessary
+  updateNote(note: [title: string, body: string, id: number]) {
+    let targetID = note[2];
+    let targetNote = this.notes.filter( el=>{
+      return el.id === targetID;
+    })[0];
+    targetNote.title = note[0];
+    targetNote.body = note[1];
+    this.saveData();
+  }
+
+  moveToTrash(note: [title: string, id: number]) { // title not actualy necessary
     //let noteTitle = note[0];
     let noteID = note[1];
     let targetIndex = this.notes.findIndex( el => {
@@ -45,12 +55,11 @@ export class NotesDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  deleteNote(note: any[]){
-    let targetID: number; // == note[0]
-    this.trashNotes = this.trashNotes.filter( el=> {
-      return !(el.id === targetID);
-    });
-
-  }
+  // deleteNote(note: any[]){
+  //   let targetID: number; // == note[0]
+  //   this.trashNotes = this.trashNotes.filter( el=> {
+  //     return !(el.id === targetID);
+  //   });
+  // }
 
 }

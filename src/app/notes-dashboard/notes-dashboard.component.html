@@ -10,7 +10,8 @@
             [title]="note.title"
             [body]="note.body"
             [id]="note.id"
-            (trashNote)="moveToTrash($event)">
+            (trashNote)="moveToTrash($event)"
+            (editNote)="updateNote($event)">
             <!-- (editNote) -->
         </app-note>
     </span>
