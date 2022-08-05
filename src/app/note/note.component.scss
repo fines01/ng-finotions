@@ -1,5 +1,7 @@
 .note-card {
 	width: 200px;
+	height: 100%;
+	// overflow: auto;
 	border-radius: 4px;
 	border: 0.5px solid rgb(0, 255, 213);
 	box-shadow: 1px 1px 5px rgb(0, 0, 0);
@@ -29,20 +31,55 @@
 
 	&:not(button):hover {
 		transform: scale(1.025);
+		//height: 100%;
 
 			.tooltip-text {
 				display: block;
 			}
     }
 
+	h4 {
+		//margin: 0.3125rem 0;
+		margin:0;
+		font-size: 1rem;
+	}
+	
+	p {
+		//margin: 0.3125rem 0;
+		margin:0;
+		font-size: 0.9rem;
+		align-self: flex-start;
+	}
+
 	.note-card-body {
 		padding: 1rem;
 		//color: white;
 		//font-weight: bold;
 		position: relative; //keeps el on top of pseudo-elements and bg image. This will make fonts etc. default to opacity 1 over transparent overlay
+		height:100%;
+		height:200px;
+		box-sizing: border-box;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 0.3125rem;
 
 		p {
 			white-space: pre-line;
+		}
+
+		&::-webkit-scrollbar {
+			width: 0.35rem;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: rgb(0, 255, 213);
+			border-radius: 4px;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: rgb(0, 179, 149);
 		}
 	}
 
@@ -67,6 +104,7 @@
 			font-weight: bold;
 			padding: 0.5rem 1rem;
 			transition: all 235ms;
+			margin-top: 0.5rem;
             
 			&:hover {
                 // background-color: rgba(240, 240, 240, 0.8);
@@ -80,6 +118,7 @@
 
 		}
 	}
+
 }
 
 .tooltip-text {
@@ -110,15 +149,71 @@ button:nth-child(2):hover {
 	color: red !important;
 }
 
-// GN
-.note-card:nth-child(2n) {
-	&:hover {
-		border: 1px solid red;
-	}
-}
-
-.note-card:nth-child(2n+1) {
+.note-card:not(.edit-form-style) {
 	&:hover {
 		border: 1px solid yellow;
 	}
+}
+
+// dry?? similar to note-form component - (mb own component for form-body with inputs)
+input,
+textarea {
+	outline: none;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	color: rgb(27, 55, 84);
+	padding: 0.25rem;
+	transition: all 535ms;
+	font-family: inherit;
+	// not/diff in note-form
+	background-color: rgb(255, 255, 255,0.5);
+	box-sizing: border-box;
+	width:100%;
+
+	&:hover {
+		background-color: white;
+	}
+}
+
+input {
+	border-radius: 4px 4px 0 0;
+	// n/d in note-form
+	//margin-bottom: 0.25rem;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+textarea {
+	border-radius: 0 0 4px 4px;
+	font-size: 0.9rem;
+
+	&::-webkit-scrollbar {
+		width: 0.35rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgb(27, 55, 84);
+		border-radius: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: rgb(36, 72, 111);
+	}
+}
+
+.edit-form-style {
+	button:nth-child(1):hover {
+		outline: 1px solid rgb(0, 255, 213);
+		color: rgb(0, 255, 213) !important;
+	}
+
+	button:nth-child(2):hover {
+		outline: 1px solid orange;
+		color: orange !important;
+	}
+
+	border-radius: 4px;
+	border: 0.5px solid orange;
+	background-color: rgb(0, 255, 213, 0.2);
+
 }
