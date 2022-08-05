@@ -5,8 +5,8 @@
             [title]="note.title"
             [body]="note.body"
             [id]="note.id">
-            (restoreNote)=""
-            (deleteNote)=""
+            (restoreNote)="restoreNote($event)"
+            (deleteNote)="deleteNote($event)"
         </app-note>
     </span>
 </div>

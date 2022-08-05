@@ -27,4 +27,22 @@ export class TrashDashboardComponent implements OnInit {
     this.noteService.setTrashData(this.trashNotes);
   }
 
+  restoreNote(id: number) {
+    let targetIndex = this.notes.findIndex( el=> {
+      return el.id === id;
+    });
+    this.notes.unshift(this.notes[targetIndex]);
+    this.trashNotes.splice(targetIndex,1);
+    this.saveData();
+  }
+
+  deleteNote(id: number){
+    console.log('received ', id);
+    let targetID: number; // == note[0]
+    this.trashNotes = this.trashNotes.filter( el=> {
+      return !(el.id === targetID);
+    });
+    this.saveData();
+  }
+
 }

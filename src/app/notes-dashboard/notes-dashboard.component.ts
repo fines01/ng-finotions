@@ -27,7 +27,6 @@ export class NotesDashboardComponent implements OnInit {
     this.noteService.setTrashData(this.trashNotes);
   }
 
-
   saveNote(note: string[]) {
     let newNote = {title: note[0], body: note[1], id: Date.now() }; // for now just timestamp as id
     this.notes.unshift(newNote);
@@ -45,7 +44,6 @@ export class NotesDashboardComponent implements OnInit {
   }
 
   moveToTrash(note: [title: string, id: number]) { // title not actualy necessary
-    //let noteTitle = note[0];
     let noteID = note[1];
     let targetIndex = this.notes.findIndex( el => {
       return el.id === noteID; // && el.title === noteTitle
@@ -54,12 +52,5 @@ export class NotesDashboardComponent implements OnInit {
     this.notes.splice(targetIndex,1);
     this.saveData();
   }
-
-  // deleteNote(note: any[]){
-  //   let targetID: number; // == note[0]
-  //   this.trashNotes = this.trashNotes.filter( el=> {
-  //     return !(el.id === targetID);
-  //   });
-  // }
 
 }

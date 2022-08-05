@@ -10,9 +10,13 @@
         <p>
             {{ body }}
         </p>
-        <div class="card-btns">
+        <div *ngIf="!trashView" class="card-btns">
             <button (click)="openEdit()">Edit</button>
-            <button (click)="onMoveToTrash()">Delete</button>
+            <button (click)="onMoveToTrash()">Trash</button>
+        </div>
+        <div *ngIf="trashView" class="card-btns">
+            <button (click)="onRestoreNote()">Restore</button>
+            <button (click)="onDeleteNote()">Delete</button>
         </div>
     </div>
 
@@ -23,7 +27,6 @@
         <div class="card-btns">
             <button (click)="onSaveEdit()">Save</button>
             <button (click)="closeEdit()">Back</button>
-            <!-- <button (click)="resetInputs()">Reset</button> -->
         </div>
     </div>
 

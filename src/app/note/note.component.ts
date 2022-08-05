@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-note',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 export class NoteComponent implements OnInit {
 
   editMode: boolean = false;
+  trashView: boolean = false;
 
   @Input() title!: string;
   @Input() body!: string;
@@ -18,6 +20,14 @@ export class NoteComponent implements OnInit {
 
   @Output() trashNote = new EventEmitter();
   @Output() editNote = new EventEmitter();
+  @Output() deleteNote = new EventEmitter();
+  @Output() restoreNote = new EventEmitter();
+
+  constructor( public router: Router ) { }
+  
+  ngOnInit(): void { 
+    this.trashView = (this.router.url === '/trash');
+  }
 
   onMoveToTrash() {
     this.trashNote.emit([this.title, this.id]);
@@ -26,6 +36,14 @@ export class NoteComponent implements OnInit {
   onSaveEdit() {
     this.closeEdit();
     this.editNote.emit([this.title, this.body, this.id]);
+  }
+
+  onDeleteNote() {
+    this.deleteNote.emit(this.id);
+  }
+
+  onRestoreNote() {
+    this.restoreNote.emit(this.id);
   }
 
   closeEdit() {
@@ -40,8 +58,5 @@ export class NoteComponent implements OnInit {
     this.title = this.title;
     this.body = this.body;
   }
-
-  constructor() { }
-  ngOnInit(): void { }
 
 }

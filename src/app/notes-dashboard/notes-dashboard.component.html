@@ -4,7 +4,7 @@
 </div>
 <!-- container to display notes -->
 <div class="notes-container">
-    <!-- single note components (examples, TEST) -->
+    <!-- single note components -->
     <span *ngFor="let note of notes">
         <app-note
             [title]="note.title"
@@ -12,7 +12,6 @@
             [id]="note.id"
             (trashNote)="moveToTrash($event)"
             (editNote)="updateNote($event)">
-            <!-- (editNote) -->
         </app-note>
     </span>
 </div>

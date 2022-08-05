@@ -38,7 +38,6 @@ export class NoteService {
   saveLocalData(data: any[]) {
     let stringifiedData = JSON.stringify(data);
     let storageName = this.resolveName(data);
-    console.log(data, storageName);
     if (typeof storageName == 'string') localStorage.setItem(storageName, stringifiedData);
   }
 
