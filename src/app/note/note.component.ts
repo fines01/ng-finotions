@@ -29,20 +29,20 @@ export class NoteComponent implements OnInit {
     this.trashView = (this.router.url === '/trash');
   }
 
-  onMoveToTrash() {
-    this.trashNote.emit([this.title, this.id]);
+  emitTrashEvent() {
+    this.trashNote.emit(this.id);
   }
 
-  onSaveEdit() {
+  emitEditEvent() {
     this.closeEdit();
     this.editNote.emit([this.title, this.body, this.id]);
   }
 
-  onDeleteNote() {
+  emitDeleteEvent() {
     this.deleteNote.emit(this.id);
   }
 
-  onRestoreNote() {
+  emitRestoreEvent() {
     this.restoreNote.emit(this.id);
   }
 

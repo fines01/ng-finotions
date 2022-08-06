@@ -12,11 +12,11 @@
         </p>
         <div *ngIf="!trashView" class="card-btns">
             <button (click)="openEdit()">Edit</button>
-            <button (click)="onMoveToTrash()">Trash</button>
+            <button (click)="emitTrashEvent()">Trash</button>
         </div>
         <div *ngIf="trashView" class="card-btns">
-            <button (click)="onRestoreNote()">Restore</button>
-            <button (click)="onDeleteNote()">Delete</button>
+            <button (click)="emitRestoreEvent()">Restore</button>
+            <button (click)="emitDeleteEvent()">Delete</button>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         <input type="text" name="title" placeholder="Title" [(ngModel)]=" title " />
         <textarea name="body" placeholder="Content..." rows="4" [(ngModel)]=" body "></textarea>
         <div class="card-btns">
-            <button (click)="onSaveEdit()">Save</button>
+            <button (click)="emitEditEvent()">Save</button>
             <button (click)="closeEdit()">Back</button>
         </div>
     </div>

@@ -27,13 +27,13 @@ export class NotesDashboardComponent implements OnInit {
     this.noteService.setTrashData(this.trashNotes);
   }
 
-  saveNote(note: string[]) {
+  onSaveNote(note: string[]) {
     let newNote = {title: note[0], body: note[1], id: Date.now() }; // for now just timestamp as id
     this.notes.unshift(newNote);
     this.saveData();
   }
 
-  updateNote(note: [title: string, body: string, id: number]) {
+  onEditNote(note: [title: string, body: string, id: number]) {
     let targetID = note[2];
     let targetNote = this.notes.filter( el=>{
       return el.id === targetID;
@@ -43,8 +43,8 @@ export class NotesDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  moveToTrash(note: [title: string, id: number]) { // title not actualy necessary
-    let noteID = note[1];
+  onTrashNote(id: number) { 
+    let noteID = id; //note[1];
     let targetIndex = this.notes.findIndex( el => {
       return el.id === noteID; // && el.title === noteTitle
     });
@@ -52,5 +52,21 @@ export class NotesDashboardComponent implements OnInit {
     this.notes.splice(targetIndex,1);
     this.saveData();
   }
+
+  ///
+
+  test() {
+    console.log('ok')
+  }
+  onDeleteNote(id: number){
+    console.log('received ', id);
+    let targetID: number; // == note[0]
+    this.trashNotes = this.trashNotes.filter( el=> {
+      return !(el.id === targetID);
+    });
+    this.saveData();
+  }
+
+  
 
 }

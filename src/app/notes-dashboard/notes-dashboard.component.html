@@ -1,6 +1,6 @@
 <!-- FORM: create new note -->
 <div class="form-container">
-    <app-note-form (submitNote)="saveNote($event)"></app-note-form>
+    <app-note-form (submitNote)="onSaveNote($event)"></app-note-form>
 </div>
 <!-- container to display notes -->
 <div class="notes-container">
@@ -10,8 +10,8 @@
             [title]="note.title"
             [body]="note.body"
             [id]="note.id"
-            (trashNote)="moveToTrash($event)"
-            (editNote)="updateNote($event)">
+            (trashNote)="onTrashNote($event)"
+            (editNote)="onEditNote($event)">
         </app-note>
     </span>
 </div>

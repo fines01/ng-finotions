@@ -11,6 +11,7 @@ export class TrashDashboardComponent implements OnInit {
   notes: {title: string; body: string; id:number}[] = [];
   trashNotes: {title: string; body: string; id:number}[] = [];
 
+
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {     
@@ -27,7 +28,7 @@ export class TrashDashboardComponent implements OnInit {
     this.noteService.setTrashData(this.trashNotes);
   }
 
-  restoreNote(id: number) {
+  onRestoreNote(id: number) {
     let targetIndex = this.notes.findIndex( el=> {
       return el.id === id;
     });
@@ -36,7 +37,7 @@ export class TrashDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  deleteNote(id: number){
+  onDeleteNote(id: number){
     console.log('received ', id);
     let targetID: number; // == note[0]
     this.trashNotes = this.trashNotes.filter( el=> {

@@ -27,7 +27,6 @@ export class NoteFormComponent implements OnInit {
     }
     else {
       this.removeBlinkAnimation();
-      console.log('vaidation failed')
     }
   }
 
