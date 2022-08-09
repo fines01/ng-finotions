@@ -12,4 +12,10 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // navigates to section th the current page
+  navigateTo(section: string){
+    window.location.hash = '';
+    window.location.hash = section;
+  }
+
 }
