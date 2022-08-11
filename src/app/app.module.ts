@@ -11,6 +11,7 @@ import { NoteComponent } from './note/note.component';
 import { NoteFormComponent } from './note-form/note-form.component';
 import { TrashDashboardComponent } from './trash-dashboard/trash-dashboard.component';
 import { NoteService } from './note.service';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NoteService } from './note.service';
     NotesDashboardComponent,
     NoteComponent,
     NoteFormComponent,
-    TrashDashboardComponent
+    TrashDashboardComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
