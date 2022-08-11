@@ -8,7 +8,7 @@ export class NoteService {
 
   notes = 
   [
-    {title: "Example Note Title", body: `Welcome! \n\n Click on the form above to add a new note. \n\n If you click 'Delete' the note will be moved to the trash folder, from which you can restore it later or delete it permanently.\n\n`, id:1},
+    {title: "Example Note Title", body: `Welcome! \n\n Click on the form above to add a new note. \n\n If you click 'Trash' the note will be moved to the trash folder, from which you can restore it later or delete it permanently.\n\n`, id:1},
   ];
 
   trashNotes: {title: string; body: string; id:number}[] = [];

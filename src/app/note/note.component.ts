@@ -18,10 +18,10 @@ export class NoteComponent implements OnInit {
   newTitle!: string;
   newBody!: string;
 
-  @Output() trashNote = new EventEmitter();
-  @Output() editNote = new EventEmitter();
-  @Output() deleteNote = new EventEmitter();
-  @Output() restoreNote = new EventEmitter();
+  @Output() trashNote = new EventEmitter<number>();
+  @Output() editNote = new EventEmitter<[string,string,number]>();
+  @Output() deleteNote = new EventEmitter<number>();
+  @Output() restoreNote = new EventEmitter<number>();
 
   constructor( public router: Router ) { }
   
@@ -29,32 +29,32 @@ export class NoteComponent implements OnInit {
     this.trashView = (this.router.url === '/trash');
   }
 
-  emitTrashEvent() {
+  emitTrashEvent(): void {
     this.trashNote.emit(this.id);
   }
 
-  emitEditEvent() {
+  emitEditEvent(): void {
     this.closeEdit();
     this.editNote.emit([this.title, this.body, this.id]);
   }
 
-  emitDeleteEvent() {
+  emitDeleteEvent(): void {
     this.deleteNote.emit(this.id);
   }
 
-  emitRestoreEvent() {
+  emitRestoreEvent(): void {
     this.restoreNote.emit(this.id);
   }
 
-  closeEdit() {
+  closeEdit(): void {
     this.editMode = false;
   }
 
-  openEdit() {
+  openEdit(): void {
     this.editMode = true;
   }
 
-  resetInputs() {
+  resetInputs(): void {
     this.title = this.title;
     this.body = this.body;
   }

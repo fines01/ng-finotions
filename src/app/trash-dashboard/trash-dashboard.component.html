@@ -4,9 +4,9 @@
             class="trash-note"
             [title]="note.title"
             [body]="note.body"
-            [id]="note.id">
+            [id]="note.id"
             (restoreNote)="onRestoreNote($event)"
-            (deleteNote)="onDeleteNote($event)"
+            (deleteNote)="onDeleteNote($event)">
         </app-note>
     </span>
 </div>
