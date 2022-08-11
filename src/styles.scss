@@ -1,12 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-
 /* Google Fonts. TODO: download !!!  */
-/* @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=Oxygen:wght@300;400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400&family=McLaren&family=Oxygen:wght@300;400;700&display=swap');
 
 :root {
     --footer-height: 4.5rem;
-    --space-x: 10rem; // lateral spacing each side
+    --space-x: 10vw; // lateral spacing each side
+    --note-width: 200px;
+    --note-height: 200px;
 }
 
 html {
@@ -24,4 +23,23 @@ body {
 
 .d-none {
     display: none !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--note-width), 1fr));
+    justify-items: center;
+    gap: 1.5rem 1rem;
+    border-radius: 4px;
+
+    // test: as notes alone juust don't always align with side edges
+    // border-right: 1px dashed rgb(170, 167, 167, 0.9);
+    // border-left: 1px dashed rgb(170, 167, 167, 0.9);
+    
+    // padding: 1rem 0.5rem;
+    // box-shadow: 0px 0px 95px 0 rgba(255,255,255); // w dark body?
 }

@@ -1,15 +1,14 @@
 nav {
 	background-color: rgb(27, 55, 84);
-	/* background-color: #8080ff; */
-	/* #e7fafe;  #140330*/
-	outline: 0.5px solid yellow;
+    box-shadow: 0 0 4px 0 yellow;
 
-	color: rgb(255, 255, 255); //? check
+	color: rgb(255, 255, 255);
 	padding: 1rem var(--space-x); // nicht mehr als ca 60px, 3.75rem versuchen
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
     box-sizing: border-box;
+    width: 100%;
 
 	a {
 		color: rgb(255, 255, 255);
@@ -78,8 +77,4 @@ nav {
 .active-navlink {
     font-weight: bold;
     //color: rgb(225, 225, 225) !important;
-}
-
-.info-link {
-    cursor: pointer;
 }
