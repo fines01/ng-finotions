@@ -53,11 +53,6 @@ export class NotesDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  ///
-
-  test() {
-    console.log('ok')
-  }
   onDeleteNote(id: number): void {
     console.log('received ', id);
     let targetID: number; // == note[0]
