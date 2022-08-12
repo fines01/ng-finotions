@@ -22,6 +22,7 @@ export class NoteComponent implements OnInit {
   @Output() editNote = new EventEmitter<[string,string,number]>();
   @Output() deleteNote = new EventEmitter<number>();
   @Output() restoreNote = new EventEmitter<number>();
+  @Output() openNote = new EventEmitter<[string, string]>();
 
   constructor( public router: Router ) { }
   
@@ -44,6 +45,10 @@ export class NoteComponent implements OnInit {
 
   emitRestoreEvent(): void {
     this.restoreNote.emit(this.id);
+  }
+
+  onEmitOpenEvent(): void {
+    this.openNote.emit([this.title, this.body]);
   }
 
   closeEdit(): void {

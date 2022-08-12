@@ -10,8 +10,17 @@
             [title]="note.title"
             [body]="note.body"
             [id]="note.id"
+            (openNote)="onOpenNote($event)"
             (trashNote)="onTrashNote($event)"
             (editNote)="onEditNote($event)">
         </app-note>
     </span>
 </div>
+<!-- modal / dialog to show note detail-view-->
+<app-modal
+    *ngIf="openModal"
+    [title]="modalTitle"
+    [body]="modalBody"
+    (closeModal)="onCloseNote($event)"
+    >
+</app-modal>

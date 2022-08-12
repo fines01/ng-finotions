@@ -10,10 +10,10 @@ export class ModalComponent implements OnInit {
   @Input() title!: string;
   @Input() body!: string;
 
-  @Output() closeModal = new EventEmitter(); //boolean?
+  @Output() closeModal = new EventEmitter<boolean>(); //boolean or empty
 
-  onCloseModal() {
-    this.closeModal.emit(); //emit: true
+  onEmitCloseEvent() {
+    this.closeModal.emit(true); //emit: true, but I wouldn't really need to emit anything here
   }
 
   constructor() { }

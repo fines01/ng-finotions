@@ -1,40 +1,84 @@
 #modal-overlay {
-    position: absolute; //or fixed?
+    position: fixed;
     top: 0; bottom: 0;
     left: 0; right: 0;
     background-color: rgba(34, 83, 60, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
+
 }
 
 #close-modal-icon {
     position:absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0rem;
+    right: 0rem;
     height: 1.5rem;
     width: 1.5rem;
     margin-left: 0.5rem;
     padding: 0.25rem;
     cursor: pointer;
-    border-radius: 50%;
+    transition: all 235ms;
+    border-radius: 0.25rem 0.25rem 0.25rem 50%;
 
     &:hover {
         background-color: gray;
-        color: white;
-        border: 1px solid aqua;
+        color: rgb(0, 255, 213);
+        border: 1px solid rgb(0, 255, 213);
     }
 }
 
 .modal-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto; // auto
     max-width: 50vw;
+    position: relative;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #212c37;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-line;
+    box-sizing: border-box;
+    //background-clip: border-box; //default
+    border: 1px solid rgba(0, 255, 213, 0.5);
+    padding: 1rem 1.5rem;
+    margin: 3rem;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-size: calc(1.3rem + 0.6vw); //same as Bootstrap
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
 
     button {
-        min-width: 7rem; //?? rm
+        font-family: inherit;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        color: rgb(27, 55, 84);
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        transition: all 235ms;
+        width: 45%;
 
         &:hover {
-            outline: 2px solid aqua;
+        	background-color: rgb(61, 61, 92, 0.8);
+        	transform: scale(1.05);
+            outline: 2px solid rgb(0, 255, 213);
+            color: rgb(0, 255, 213);
         }
     }
+}
+
+.modal-btns {
+    display: flex;
+    justify-content: center;
 }

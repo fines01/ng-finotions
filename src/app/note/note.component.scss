@@ -5,7 +5,6 @@
 	border-radius: 4px;
 	border: 0.5px solid rgb(0, 255, 213);
 	box-shadow: 1px 1px 5px rgb(0, 0, 0);
-	cursor: pointer;
 	transition: all 235ms;
 	position: relative;
 
@@ -41,6 +40,7 @@
 		//margin: 0.3125rem 0;
 		margin:0;
 		font-size: 1rem;
+		z-index: 1;
 	}
 	
 	p {
@@ -52,8 +52,7 @@
 
 	.note-card-body {
 		padding: 1rem;
-		//color: white;
-		//font-weight: bold;
+		//cursor: move; // when implementing drag&drop
 		position: relative; //keeps el on top of pseudo-elements and bg image. This will make fonts etc. default to opacity 1 over transparent overlay
 		height:100%;
 		height: var(--note-height);
@@ -64,9 +63,17 @@
 		justify-content: space-between;
 		// gap: 0.3125rem;
 		gap: 1rem;
+		flex: 1 1 auto;
+
+		&:active { // when implementing drag&drop
+			cursor: -webkit-grabbing; 
+			cursor: -moz-grabbing;
+		}
 
 		p {
 			white-space: pre-line;
+			word-wrap: break-word;
+			line-height: 1.2;
 		}
 
 		&::-webkit-scrollbar {
@@ -87,7 +94,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		// margin-top: -1rem; // only if overflow on card-body?
 		
 		&:hover {
 			.tooltip-text {
@@ -155,7 +161,7 @@ button:nth-child(2):hover {
 	}
 }
 
-// dry?? similar to note-form component - (mb own component for form-body with inputs)
+// dry, s. note-form component - (mb own component for form-body with inputs)
 input,
 textarea {
 	outline: none;
@@ -212,4 +218,15 @@ textarea {
 	border: 0.5px solid orange;
 	background-color: rgb(0, 255, 213, 0.2);
 
+}
+
+.title-link {
+	cursor: pointer;
+	transition: all 235ms;
+
+	&:hover {
+		transform: scale(1.01);
+		color: rgb(0, 222, 185);
+		color: rgb(0, 255, 213);
+	}
 }

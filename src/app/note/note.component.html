@@ -4,7 +4,9 @@
         <!-- <span *ngIf="!editMode" class="tooltip-text">Click title to open detail-view</span> -->
     </span>
     <div *ngIf="!editMode" class="note-card-body">
-        <h4>
+        <h4 (click)="onEmitOpenEvent()" 
+            [class.title-link]="!trashView"
+            title="{{ !trashView ? 'Click on title to open card' : '' }}">
             {{ title }}
         </h4>
         <p>
@@ -20,7 +22,7 @@
         </div>
     </div>
 
-    <!-- edit card - body: inputs (dry: similar to note-form component - (mb own component for form-body with inputs) ) -->
+    <!-- edit card - body: inputs (dry: s. note-form component - (mb own component for form-body with inputs) ) -->
     <div *ngIf="editMode" class="note-card-body">
         <input type="text" name="title" placeholder="Title" [(ngModel)]=" title " />
         <textarea name="body" placeholder="Content..." rows="4" [(ngModel)]=" body "></textarea>

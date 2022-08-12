@@ -10,6 +10,9 @@ export class NotesDashboardComponent implements OnInit {
 
   notes: {title: string; body: string; id:number}[] = [];
   trashNotes: {title: string; body: string; id:number}[] = [];
+  openModal: boolean = false;
+  modalTitle!: string;
+  modalBody!: string;
 
   constructor(private noteService: NoteService) { }
 
@@ -62,6 +65,15 @@ export class NotesDashboardComponent implements OnInit {
     this.saveData();
   }
 
-  
+  onOpenNote(note: [title: string, body: string]) {
+    this.openModal = true;
+    this.modalTitle = note[0];
+    this.modalBody = note[1];
+  }
+
+  onCloseNote(closeEvent: boolean) {
+    if (closeEvent) this.openModal = false;
+    console.log(this.openModal, closeEvent);
+  }
 
 }

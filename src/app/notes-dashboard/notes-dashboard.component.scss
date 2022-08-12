@@ -5,6 +5,19 @@
     margin-bottom: 3rem;
 }
 
+.note-card {
+
+    h4 {
+
+        cursor: pointer;
+
+        &:hover {
+        	transform: scale(1.01);
+        	color: rgb(0, 222, 185);
+        }
+    }
+}
+
 //GN
 // app-note:nth-child(2n) {
 // 	&:hover {
